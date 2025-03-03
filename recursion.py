@@ -77,8 +77,6 @@ def group_sum_5(start, nums, target):
     if nums[start] % 5 == 0:
         if nums[start + 1] == 1:
             return group_sum_5(start + 2, nums, target - nums[start])
-        else:
-            return group_sum_5(start + 1, nums, target - nums[start])
     if group_sum_5(start + 1, nums, target - nums[start]):
         return True
     if group_sum_5(start + 1, nums, target):
@@ -137,8 +135,6 @@ def split_odd_10(nums):
             return True
         return False
     return helper(0, 0, 0)
-
-# TODO: Modify this function. You may delete this comment when you are done.
 def split_53(nums):
     """
     Given a list of ints, determine if the numbers can be split evenly into two groups
@@ -157,10 +153,9 @@ def split_53(nums):
             return helper(start + 1, x + nums[start], y)
         if nums[start] % 3 == 0:
             return helper(start + 1, x, y + nums[start])
-        else:
-            if helper(start + 1, x + nums[start], y):
-                return True
-            if helper(start + 1, x, y + nums[start]):
-                return True
+        if helper(start + 1, x + nums[start], y):
+            return True
+        if helper(start + 1, x, y + nums[start]):
+            return True
         return False
     return helper(0, 0, 0)
