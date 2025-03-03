@@ -97,7 +97,7 @@ def group_sum_clump(start, nums, target):
     end = start
     if start >= len(nums):
         return target == 0
-    while nums[end] < len(nums) and nums[end] == nums[start]:
+    while end < len(nums) and nums[end] == nums[start]:
         end += 1
     size = end - start
     clump = nums[start] * size
