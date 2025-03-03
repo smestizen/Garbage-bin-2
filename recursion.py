@@ -100,7 +100,8 @@ def group_sum_clump(start, nums, target):
     end = start
     while nums[end] < len(nums) and nums[end] == nums[start]:
         end += 1
-    clump = nums[start] * (end - start)
+    size = end - start
+    clump = nums[start] * size
     if group_sum_clump(end, nums, target - clump):
         return True
     if group_sum_clump(end, nums, target):
