@@ -96,10 +96,10 @@ def group_sum_clump(start, nums, target):
     """
     if start >= len(nums):
         return target == 0
-    end = start + 1
+    end = start
     while nums[end] < len(nums) and nums[end] == nums[start]:
         end += 1
-    size = end
+    size = end - start
     clump = nums[start] * size
     if group_sum_clump(end, nums, target - clump):
         return True
