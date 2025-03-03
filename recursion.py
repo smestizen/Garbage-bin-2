@@ -94,9 +94,9 @@ def group_sum_clump(start, nums, target):
     pre: start >= 0, len(nums) >= 0, target >= 0, nums will only contain ints
     post: return True if nums has a group of ints that sum to target, False otherwise
     """
+    end = start
     if start >= len(nums):
         return target == 0
-    end = start
     while nums[end] < len(nums) and nums[end] == nums[start]:
         end += 1
     size = end - start
